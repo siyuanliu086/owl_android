@@ -6,6 +6,9 @@ or it can helps get important properties from a Object bean, and makes your cust
 2.Add annotations in your properties.<br>
 3.Now you will get a Layout which displayed in a List or Detail type.
 
+Now add an Image, that's my project.
+![image](https://github.com/siyuanliu086/owl_android/blob/master/showicon/owl_android.png)
+
 
 
 

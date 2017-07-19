@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface OwlList {
-	public ListEnum owlListType() default ListEnum.hidden;
+	public ListEnum listType() default ListEnum.hidden;
 	public int textSize() default 16;// default unit sp
 	public int imageSize() default 72;// default unit dp
 //	public int textColor() default Color.BLACK.;

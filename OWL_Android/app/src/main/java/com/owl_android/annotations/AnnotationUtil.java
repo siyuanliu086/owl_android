@@ -12,7 +12,7 @@ import java.util.List;
  * @Description
  * @Date 2017-7-17
  * @Author siyuan
- * @Refactor
+ * @Refactor 
  * @Company ISoftStone ZHHB
  * <hr> OWL_android Project
  * No annotation or get/set methods will not trigger
@@ -22,10 +22,10 @@ public class AnnotationUtil {
 		Class<?> clazz = bean.getClass();
 		Field[] fields = clazz.getDeclaredFields();
 		Method[] methods = clazz.getDeclaredMethods();
-
+		
 		OwlDataBean syDataBean = new OwlDataBean(bean);
 		syDataBean.setBean(bean);
-
+		
 		List<OwlListBean> listBeanList = new ArrayList<>();
 		List<OwlDetailBean> detailBeanList = new ArrayList<>();
 		try {
@@ -35,12 +35,12 @@ public class AnnotationUtil {
 				if(field.isAnnotationPresent(OwlList.class)){
 					OwlListBean listBean = new OwlListBean();
 					listBeanList.add(listBean);
-
+					
 					OwlList owlList = (OwlList) field.getAnnotation(OwlList.class);
 					String getMethod = pareGetName(field.getName());
 					for(Method tempMethod : methods) {
 						if(getMethod.equals(tempMethod.getName())) {
-							listBean.listEnum = owlList.owlListType();
+							listBean.listEnum = owlList.listType();
 							listBean.textSize = owlList.textSize();
 							listBean.imageSize = owlList.imageSize();
 							listBean.value = String.valueOf(tempMethod.invoke(bean));
@@ -49,23 +49,23 @@ public class AnnotationUtil {
 						}
 					}
 				}
-
+				
 				// 2.
 				if(field.isAnnotationPresent(OwlDetail.class)){
 					OwlDetailBean detailBean = new OwlDetailBean();
 					detailBeanList.add(detailBean);
-
+					
 					OwlDetail owlDetail = (OwlDetail) field.getAnnotation(OwlDetail.class);
 					String getMethod = pareGetName(field.getName());
 					for(Method tempMethod : methods) {
 						if(getMethod.equals(tempMethod.getName())) {
-							detailBean.owlDetailName = owlDetail.owlDetailName();
-							detailBean.detailEnum = owlDetail.owlDetailView();
+							detailBean.owlDetailName = owlDetail.detailName();
+							detailBean.detailEnum = owlDetail.detailView();
 							detailBean.textSize = owlDetail.textSize();
 							detailBean.imageSize = owlDetail.imageSize();
 							detailBean.value = String.valueOf(tempMethod.invoke(bean));
 							detailBean.property = field.getName();
-							detailBean.order = owlDetail.owlDetailOrder();
+							detailBean.order = owlDetail.order();
 							break;
 						}
 					}
@@ -85,17 +85,17 @@ public class AnnotationUtil {
 		}
 		return syDataBean;
 	}
-
+	
 	/**
-	 * ƴ��ĳ����get ����
-	 * @param fldname
-	 * @return
-	 */
-	public static String pareGetName(String fldname){
-		if(null == fldname || "".equals(fldname)){
-			return null;
-		}
-		String pro = "get"+fldname.substring(0,1).toUpperCase()+fldname.substring(1);
-		return pro;
-	}
+     * ƴ��ĳ����get ����
+     * @param fldname
+     * @return
+     */
+    public static String pareGetName(String fldname){
+        if(null == fldname || "".equals(fldname)){
+            return null;
+        }
+        String pro = "get"+fldname.substring(0,1).toUpperCase()+fldname.substring(1);
+        return pro;
+    }
 }

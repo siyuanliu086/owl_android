@@ -19,9 +19,9 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface OwlDetail {
-	public String owlDetailName();
-	public DetailEnum owlDetailView() default DetailEnum.textview;
-	public int owlDetailOrder();
+	public String detailName();
+	public DetailEnum detailView() default DetailEnum.textview;
+	public int order();
 	public int textSize() default 16;// default unit sp
 	public int imageSize() default 72;// default unit dp
 	public int textColor() default 16;

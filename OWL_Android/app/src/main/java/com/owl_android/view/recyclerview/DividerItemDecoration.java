@@ -1,4 +1,4 @@
-package com.owl_android;
+package com.owl_android.view.recyclerview;
 
 import android.content.Context;
 import android.content.res.TypedArray;

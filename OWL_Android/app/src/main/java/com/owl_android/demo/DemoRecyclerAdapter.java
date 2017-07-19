@@ -1,4 +1,4 @@
-package com.owl_android;
+package com.owl_android.demo;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -15,11 +15,11 @@ import java.util.List;
  * Created by syliud on 2017/7/17.
  */
 
-class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> {
+class DemoRecyclerAdapter extends RecyclerView.Adapter<DemoRecyclerAdapter.MyViewHolder> {
     private Context mContext;
     private List<String> mDatas;
 
-    public HomeAdapter(Context mContext, List<String> data) {
+    public DemoRecyclerAdapter(Context mContext, List<String> data) {
         this.mContext = mContext;
         this.mDatas = data;
     }

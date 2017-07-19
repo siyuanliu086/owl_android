@@ -31,7 +31,7 @@ public class AnnotationUtil {
 		try {
 			for(Field field : fields) {
 				// scan all the fields and find annotation
-				// 1.
+				// 1.LIST
 				if(field.isAnnotationPresent(OwlList.class)){
 					OwlListBean listBean = new OwlListBean();
 					listBeanList.add(listBean);
@@ -50,7 +50,7 @@ public class AnnotationUtil {
 					}
 				}
 				
-				// 2.
+				// 2.DETAIL
 				if(field.isAnnotationPresent(OwlDetail.class)){
 					OwlDetailBean detailBean = new OwlDetailBean();
 					detailBeanList.add(detailBean);

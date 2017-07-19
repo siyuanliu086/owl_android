@@ -1,5 +1,6 @@
 package com.owl_android.annotations;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -36,6 +37,7 @@ public class OwlDataBean {
 	}
 
 	public void setDetailBeanList(List<OwlDetailBean> detailBeanList) {
+		Collections.sort(detailBeanList);  
 		this.detailBeanList = detailBeanList;
 	}
 
@@ -51,12 +53,13 @@ public class OwlDataBean {
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
 		if(detailBeanList != null) {
+			sb.append("OwlDetail Parsing...\n");
 			for(OwlDetailBean bean : detailBeanList) {
 				sb.append(bean.toString() + "\n");
 			}
 		}
 		if(listBeanList != null) {
-			sb.append("\n");
+			sb.append("OwlList Parsing...\n");
 			for(OwlListBean bean : listBeanList) {
 				sb.append(bean.toString() + "\n");
 			}

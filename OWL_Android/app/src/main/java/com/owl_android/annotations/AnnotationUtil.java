@@ -36,12 +36,14 @@ public class AnnotationUtil {
 					OwlListBean listBean = new OwlListBean();
 					listBeanList.add(listBean);
 					
-					OwlList owlList = (OwlList) field.getAnnotation(OwlList.class);
+					OwlList owlList = field.getAnnotation(OwlList.class);
 					String getMethod = pareGetName(field.getName());
 					for(Method tempMethod : methods) {
 						if(getMethod.equals(tempMethod.getName())) {
 							listBean.listEnum = owlList.listType();
-							listBean.textSize = owlList.textSize();
+							listBean.titleSize = owlList.nameSize();
+							listBean.contentSize = owlList.contentSize();
+							listBean.contentSize = owlList.timeSize();
 							listBean.imageSize = owlList.imageSize();
 							listBean.value = String.valueOf(tempMethod.invoke(bean));
 							listBean.property = field.getName();
@@ -55,13 +57,14 @@ public class AnnotationUtil {
 					OwlDetailBean detailBean = new OwlDetailBean();
 					detailBeanList.add(detailBean);
 					
-					OwlDetail owlDetail = (OwlDetail) field.getAnnotation(OwlDetail.class);
+					OwlDetail owlDetail = field.getAnnotation(OwlDetail.class);
 					String getMethod = pareGetName(field.getName());
 					for(Method tempMethod : methods) {
 						if(getMethod.equals(tempMethod.getName())) {
 							detailBean.owlDetailName = owlDetail.detailName();
 							detailBean.detailEnum = owlDetail.detailView();
-							detailBean.textSize = owlDetail.textSize();
+							detailBean.nameSize = owlDetail.nameSize();
+							detailBean.valueSize = owlDetail.valueSize();
 							detailBean.imageSize = owlDetail.imageSize();
 							detailBean.value = String.valueOf(tempMethod.invoke(bean));
 							detailBean.property = field.getName();
@@ -87,11 +90,11 @@ public class AnnotationUtil {
 	}
 	
 	/**
-     * ƴ��ĳ����get ����
+     * 构造Get方法
      * @param fldname
      * @return
      */
-    public static String pareGetName(String fldname){
+    private static String pareGetName(String fldname){
         if(null == fldname || "".equals(fldname)){
             return null;
         }

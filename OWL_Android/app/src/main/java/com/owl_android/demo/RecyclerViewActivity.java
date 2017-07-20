@@ -2,9 +2,7 @@ package com.owl_android.demo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 
-import com.owl_android.utils.OwlViewFactory;
 import com.owl_android.utils.R;
 
 import java.text.SimpleDateFormat;
@@ -18,7 +16,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
-
+        setTitle("RecyclerView");
         initData();
     }
 
@@ -34,6 +32,6 @@ public class RecyclerViewActivity extends AppCompatActivity {
             dataList.add(city);
         }
 
-        RecyclerView owlRecyclerView = (RecyclerView) OwlViewFactory.getInstance().getTargetView(OwlViewFactory.OWLVIEW_RECYCLERVIEW);
+//        OwlDetailView owlRecyclerView = (OwlDetailView) OwlViewFactory.getInstance().getTargetView(OwlViewFactory.OWL_DETAILVIEW);
     }
 }

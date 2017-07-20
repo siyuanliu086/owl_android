@@ -6,28 +6,28 @@ import com.owl_android.annotations.OwlDetail;
 import com.owl_android.annotations.OwlList;
 
 public class City {
-	@OwlList(owlListType = ListEnum.title, textSize = 16)
-	@OwlDetail(owlDetailName = "城市：", owlDetailOrder = 2, textSize = 16)
-	private String regionName = "北京市";
+	@OwlList(listType = ListEnum.title)
+	@OwlDetail(detailName = "城市", order = 2)
+	private String cityName = "北京市";
 
-	@OwlList(owlListType = ListEnum.image, imageSize = 68)
-	@OwlDetail(owlDetailName = "图片：", owlDetailView = DetailEnum.image, imageSize = 68, owlDetailOrder = 1)
+	@OwlList(listType = ListEnum.image, imageSize = 68)
+	@OwlDetail(detailName = "图片", detailView = DetailEnum.image, imageSize = 68, order = 1)
 	private String imageUrl = "http:lalala.png";
 
-	@OwlList(owlListType = ListEnum.timeText, textSize = 14)
-	@OwlDetail(owlDetailName = "日期：", owlDetailOrder = 3, textSize = 14)
-	private String op = "2017-07-17";
+	@OwlList(listType = ListEnum.timeText, nameSize = 14)
+	@OwlDetail(detailName = "日期", order = 3)
+	private String time = "2017-07-17";
 
-	@OwlList(owlListType = ListEnum.content, textSize = 14)
-	@OwlDetail(owlDetailName = "说明：", owlDetailView = DetailEnum.textarea, owlDetailOrder = 4, textSize = 14)
+	@OwlList(listType = ListEnum.content, nameSize = 14)
+	@OwlDetail(detailName = "说明", detailView = DetailEnum.textarea, order = 4)
 	private String content = "这是OWL测试案例";
 
-	public String getRegionName() {
-		return regionName;
+	public String getCityName() {
+		return cityName;
 	}
 
-	public void setRegionName(String regionName) {
-		this.regionName = regionName;
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
 	}
 
 	public String getImageUrl() {
@@ -38,12 +38,12 @@ public class City {
 		this.imageUrl = imageUrl;
 	}
 
-	public String getOp() {
-		return op;
+	public String getTime() {
+		return time;
 	}
 
-	public void setOp(String op) {
-		this.op = op;
+	public void setTime(String time) {
+		this.time = time;
 	}
 
 	public String getContent() {

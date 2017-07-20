@@ -22,7 +22,8 @@ public @interface OwlDetail {
 	public String detailName();
 	public DetailEnum detailView() default DetailEnum.textview;
 	public int order();
-	public int textSize() default 16;// default unit sp
+	public int nameSize() default 16;// default unit sp
+	public int valueSize() default 14;// default unit sp
 	public int imageSize() default 72;// default unit dp
 	public int textColor() default 16;
 }

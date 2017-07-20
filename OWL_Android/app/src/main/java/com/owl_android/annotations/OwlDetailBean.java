@@ -13,7 +13,8 @@ package com.owl_android.annotations;
 public class OwlDetailBean implements Comparable<OwlDetailBean>{
 	public String owlDetailName;
 	public DetailEnum detailEnum;
-	public int textSize;
+	public int nameSize;
+	public int valueSize;
 	public int imageSize;
 //	public int textColor;
 	public String property = "";
@@ -22,8 +23,8 @@ public class OwlDetailBean implements Comparable<OwlDetailBean>{
 	
 	@Override
 	public String toString() {
-		String imageStr = detailEnum == DetailEnum.image ? " | imageSize(dp):" + imageSize : " | textSize(sp):" + textSize;
-		return owlDetailName + "(" + property + ")" + value + " | " + detailEnum.toString() + imageStr + " | order:" + order;
+		String imageStr = detailEnum == DetailEnum.image ? " | imageSize(dp):" + imageSize : " | nameSize(sp):" + nameSize;
+		return owlDetailName + "(" + property + ")" + value + " | valueSize(sp)"+valueSize+") | " + detailEnum.toString() + imageStr + " | order:" + order;
 	}
 
 	@Override

@@ -36,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "" + mDatas.get(position), Toast.LENGTH_SHORT).show();
                 if(position == 0) {
                     goToRecyclerViewDemo();
+                } else if(position == 1) {
+                    goToRecyclerViewDemo();
+                } else if(position == 2) {
+                    goToDetailViewDemo();
                 }
             }
             @Override
@@ -43,6 +47,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void goToDetailViewDemo() {
+        startActivity(new Intent(MainActivity.this, DetailViewActivity.class));
     }
 
     private void goToRecyclerViewDemo() {

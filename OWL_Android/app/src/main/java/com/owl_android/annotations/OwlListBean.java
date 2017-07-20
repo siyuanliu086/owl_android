@@ -12,7 +12,9 @@ package com.owl_android.annotations;
  */
 public class OwlListBean {
 	public ListEnum listEnum;
-	public int textSize;
+	public int titleSize;
+	public int contentSize;
+	public int timeSize;
 	public int imageSize;
 //	public int textColor;
 	public String property = "";
@@ -20,7 +22,7 @@ public class OwlListBean {
 	
 	@Override
 	public String toString() {
-		String imageStr = listEnum == ListEnum.image ? " | imageSize(dp):" + imageSize : " | textSize(sp):" + textSize;
+		String imageStr = listEnum == ListEnum.image ? " | imageSize(dp):" + imageSize : " | nameSize(sp):" + titleSize;
 		return property + ":" + value + " | listEnum:" + listEnum.toString() + imageStr;
 	}
 }

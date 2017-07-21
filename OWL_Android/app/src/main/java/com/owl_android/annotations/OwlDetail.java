@@ -1,5 +1,7 @@
 package com.owl_android.annotations;
 
+import com.owl_android.utils.R;
+
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -19,11 +21,12 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface OwlDetail {
-	public String detailName();
-	public DetailEnum detailView() default DetailEnum.textview;
-	public int order();
-	public int nameSize() default 16;// default unit sp
-	public int valueSize() default 14;// default unit sp
-	public int imageSize() default 72;// default unit dp
-	public int textColor() default 16;
+	String detailName();
+	DetailEnum detailView() default DetailEnum.textview;
+	int order();
+	int nameSize() default 16;// default unit sp
+	int valueSize() default 14;// default unit sp
+	int imageSize() default 72;// default unit dp
+	int nameColorRes() default R.color.deep_black;
+	int valueColorRes() default R.color.deep_gray;
 }

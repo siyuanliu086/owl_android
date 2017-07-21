@@ -45,6 +45,7 @@ public class AnnotationUtil {
 							listBean.contentSize = owlList.contentSize();
 							listBean.contentSize = owlList.timeSize();
 							listBean.imageSize = owlList.imageSize();
+                            listBean.textColorRes = owlList.textColorRes();
 							listBean.value = String.valueOf(tempMethod.invoke(bean));
 							listBean.property = field.getName();
 							break;
@@ -66,6 +67,8 @@ public class AnnotationUtil {
 							detailBean.nameSize = owlDetail.nameSize();
 							detailBean.valueSize = owlDetail.valueSize();
 							detailBean.imageSize = owlDetail.imageSize();
+                            detailBean.nameColorRes = owlDetail.nameColorRes();
+                            detailBean.valueColorRes = owlDetail.valueColorRes();
 							detailBean.value = String.valueOf(tempMethod.invoke(bean));
 							detailBean.property = field.getName();
 							detailBean.order = owlDetail.order();

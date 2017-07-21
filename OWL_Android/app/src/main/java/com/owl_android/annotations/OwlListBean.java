@@ -16,7 +16,7 @@ public class OwlListBean {
 	public int contentSize;
 	public int timeSize;
 	public int imageSize;
-//	public int textColor;
+	public int textColorRes;
 	public String property = "";
 	public String value = "";
 	

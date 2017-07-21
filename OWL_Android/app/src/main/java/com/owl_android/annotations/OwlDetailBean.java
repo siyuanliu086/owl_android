@@ -16,7 +16,8 @@ public class OwlDetailBean implements Comparable<OwlDetailBean>{
 	public int nameSize;
 	public int valueSize;
 	public int imageSize;
-//	public int textColor;
+	public int nameColorRes;
+	public int valueColorRes;
 	public String property = "";
 	public String value = "";
 	public int order = Integer.MAX_VALUE;

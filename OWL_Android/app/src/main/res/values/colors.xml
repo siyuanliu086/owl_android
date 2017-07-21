@@ -6,7 +6,8 @@
 
     <!-- 深灰色 -->
     <color name="deep_gray">#4b4b4b</color>
-
+    <!-- 深黑色 -->
+    <color name="deep_black">#333333</color>
     <!-- 上下描边颜色   通用这个 -->
     <color name="lines_color">#DDDDDD</color>
 </resources>

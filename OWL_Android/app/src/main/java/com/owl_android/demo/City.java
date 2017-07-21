@@ -11,7 +11,7 @@ public class City {
 	@OwlDetail(detailName = "城市", order = 2)
 	private String cityName = "北京市";
 
-	@OwlList(listType = ListEnum.image, imageSize = 68)
+	@OwlList(listType = ListEnum.image, imageSize = 48)
 	@OwlDetail(detailName = "图片", detailView = DetailEnum.image, imageSize = 68, order = 1)
 	private String imageUrl = "http:lalala.png";
 

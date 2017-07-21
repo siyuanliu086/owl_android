@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -14,7 +15,8 @@ import com.owl_android.annotations.OwlDataBean;
 import com.owl_android.annotations.OwlDetailBean;
 import com.owl_android.utils.OwlUtils;
 import com.owl_android.utils.R;
-import com.owl_android.view.AbsOwlLayout;
+import com.owl_android.view.IOwlLayout;
+import com.owl_android.view.IOwlLayoutCallback;
 
 import java.util.List;
 
@@ -30,15 +32,22 @@ import static com.owl_android.annotations.DetailEnum.textarea;
  * @Project OWL_Android
  */
 
-public class OwlDetailView implements AbsOwlLayout {
+public class OwlDetailView implements IOwlLayout {
     private LinearLayout contentLayout;
-    private OwlDetailView detailView = this;
+    private OwlDetailView owlDetailView = this;
     private Context mContext = null;
 
     public OwlDetailView(Context context) {
         mContext = context;
         contentLayout = new LinearLayout(context);
         contentLayout.setOrientation(LinearLayout.VERTICAL);
+    }
+
+    public void setAnnotationBean(Object object, IOwlLayoutCallback callback) {
+        owlDetailView = setAnnotationBean(object);
+        if(callback != null) {
+            callback.onParsingCompleted(owlDetailView.getTargetView());
+        }
     }
 
     public OwlDetailView setAnnotationBean(Object object) {
@@ -117,7 +126,8 @@ public class OwlDetailView implements AbsOwlLayout {
             contentLayoutParams.height = LinearLayout.LayoutParams.WRAP_CONTENT;
             contentLayoutParams.bottomMargin = dip48 / 4;
         }
-        return detailView;
+        onParsingCompleted(object);
+        return owlDetailView;
     }
 
     /**
@@ -129,4 +139,16 @@ public class OwlDetailView implements AbsOwlLayout {
     public LinearLayout getTargetView() {
         return contentLayout;
     }
+
+    /**
+     * 解析完成回调
+     *
+     * @param bean
+     */
+    @Override
+    public ViewGroup onParsingCompleted(Object bean) {
+        return contentLayout;
+    }
+
+
 }

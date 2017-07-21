@@ -12,7 +12,7 @@ import android.view.ViewGroup;
  * @Project OWL_Android
  */
 
-public interface AbsOwlLayout {
+public interface IOwlLayout {
 
     /**
      * Define setAnnotationBean
@@ -27,4 +27,10 @@ public interface AbsOwlLayout {
      * @return target ViewGroup
      */
     ViewGroup getTargetView();
+
+    /**
+     * 解析完成回调
+     * @param targetView
+     */
+    ViewGroup onParsingCompleted(Object bean);
 }

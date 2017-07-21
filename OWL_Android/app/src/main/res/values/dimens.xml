@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="owl_dimen_8dip">8dip</dimen>
+    <dimen name="owl_dimen_4dip">4dip</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>

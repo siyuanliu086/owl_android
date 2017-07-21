@@ -3,6 +3,9 @@ package com.owl_android.view;
 import android.content.Context;
 
 import com.owl_android.view.detail.OwlDetailView;
+import com.owl_android.view.listview.OwlListView;
+
+import java.util.List;
 
 /**
  *
@@ -26,15 +29,28 @@ public class OwlViewFactory {
         mContext = context;
     }
 
-    public AbsOwlLayout getTargetView(int viewType, Object bean){
+    public IOwlLayout getTargetView(int viewType, Object bean){
         if(OWL_DETAILVIEW == viewType) {
             OwlDetailView targetView = new OwlDetailView(mContext);
             return targetView.setAnnotationBean(bean);
-        } else {
-            return  null;
+        } else if(OWL_LISTVIEW == viewType) {
+//            OwlListView targetView = new OwlListView(mContext);
+//            List<Object> objectList = bean;
+//            return targetView.setAnnotationBean(bean);
         }
+        return  null;
     }
 
-
+    public IOwlLayout getTargetListView(int viewType, List<? extends Object> beanList){
+        if(OWL_DETAILVIEW == viewType) {
+//            OwlDetailView targetView = new OwlDetailView(mContext);
+//            return targetView.setAnnotationBean(bean);
+        } else if(OWL_LISTVIEW == viewType) {
+            OwlListView targetView = new OwlListView(mContext);
+//            List<Object> objectList = beanList;
+            return targetView.setAnnotationBean(beanList);
+        }
+        return  null;
+    }
 
 }

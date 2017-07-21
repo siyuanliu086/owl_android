@@ -31,7 +31,5 @@ public class RecyclerViewActivity extends AppCompatActivity {
             city.setContent("这是描述，OWL测试" + 1);
             dataList.add(city);
         }
-
-//        OwlDetailView owlRecyclerView = (OwlDetailView) OwlViewFactory.getInstance().getTargetView(OwlViewFactory.OWL_DETAILVIEW);
     }
 }

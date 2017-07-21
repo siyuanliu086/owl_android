@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 if(position == 0) {
                     goToRecyclerViewDemo();
                 } else if(position == 1) {
-                    goToRecyclerViewDemo();
+                    goToListViewDemo();
                 } else if(position == 2) {
                     goToDetailViewDemo();
                 }
@@ -51,6 +51,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void goToDetailViewDemo() {
         startActivity(new Intent(MainActivity.this, DetailViewActivity.class));
+    }
+
+    private void goToListViewDemo() {
+        startActivity(new Intent(MainActivity.this, ListViewActivity.class));
     }
 
     private void goToRecyclerViewDemo() {

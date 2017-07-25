@@ -27,6 +27,6 @@ public @interface OwlDetail {
 	int nameSize() default 16;// default unit sp
 	int valueSize() default 14;// default unit sp
 	int imageSize() default 72;// default unit dp
-	int nameColorRes() default R.color.deep_black;
-	int valueColorRes() default R.color.deep_gray;
+	int nameColorRes() default R.color.owl_deep_black;
+	int valueColorRes() default R.color.owl_deep_gray;
 }

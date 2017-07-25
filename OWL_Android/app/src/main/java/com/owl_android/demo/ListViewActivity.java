@@ -41,6 +41,7 @@ public class ListViewActivity extends AppCompatActivity {
         // 构建
         ListView owlListView = (ListView) OwlViewFactory.getInstance(this)
                 .getTargetListView(OwlViewFactory.OWL_LISTVIEW, cityList).getTargetView();
+//                .getTargetListView(OwlViewFactory.OWL_LISTVIEW, cityList, OwlUtils.dip2px(this, 10)).getTargetView();
         mLayout.addView(owlListView,
                 new LinearLayout.LayoutParams(ConstraintLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT));
 

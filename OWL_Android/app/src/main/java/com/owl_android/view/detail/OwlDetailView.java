@@ -83,7 +83,7 @@ public class OwlDetailView implements IOwlLayout {
 
                 // add a line
                 View lineView = new View(mContext);
-                lineView.setBackgroundColor(mContext.getResources().getColor(R.color.lines_color));
+                lineView.setBackgroundColor(mContext.getResources().getColor(R.color.owl_lines_color));
                 nameLayout.addView(lineView);
                 LinearLayout.LayoutParams lineParams = (LinearLayout.LayoutParams) lineView.getLayoutParams();
                 lineParams.width = LinearLayout.LayoutParams.MATCH_PARENT;

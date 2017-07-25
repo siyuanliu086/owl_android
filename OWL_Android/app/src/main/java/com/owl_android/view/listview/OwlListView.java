@@ -38,11 +38,12 @@ public class OwlListView implements IOwlLayout {
     private ListView listLayout;
     private OwlListView owlListView = this;
     private Context mContext = null;
+    private int dividerHight;
 
     public OwlListView(Context context) {
         mContext = context;
-        listLayout = new ListView(context);
-        listLayout.setBackgroundColor(Color.WHITE);
+        listLayout = new ListView(mContext);
+        listLayout.setBackgroundColor(Color.TRANSPARENT);
     }
 
     public OwlListView setAnnotationBean(List<? extends Object> beanList) {
@@ -76,6 +77,14 @@ public class OwlListView implements IOwlLayout {
     @Override
     public ViewGroup onParsingCompleted(Object bean) {
         return listLayout;
+    }
+
+    public void setDividerHeight(int dividerHight) {
+        this.dividerHight = dividerHight;
+        if(dividerHight == 0) {
+            return;
+        }
+        listLayout.setDividerHeight(dividerHight);
     }
 
     private class MyListAdapter extends BaseAdapter {
@@ -129,22 +138,26 @@ public class OwlListView implements IOwlLayout {
                     RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) viewHolder.iconImageview.getLayoutParams();
                     params.width = OwlUtils.dip2px(mContext, listBean.imageSize);
                     params.height = OwlUtils.dip2px(mContext, listBean.imageSize);
-                    viewHolder.iconImageview.setBackgroundResource(R.mipmap.owl_android);
-//                    Glide.with(mContext)
-//                            .load(listBean.value)
-//                            .bitmapTransform(new BlurTransformation(mContext, 25), new CropCircleTransformation(mContext))
-//                            .into(viewHolder.iconImageview);
+//                    viewHolder.iconImageview.setBackgroundResource(R.mipmap.owl_android);
+                    Glide.with(mContext)
+                            .load(listBean.value)
+                            //.bitmapTransform(new BlurTransformation(mContext, 25), new CropCircleTransformation(mContext))
+                            .into(viewHolder.iconImageview);
                 } else if(listBean.listEnum == ListEnum.title) {
                     viewHolder.titleTextView.setText(listBean.value);
                     viewHolder.titleTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, listBean.titleSize);
+                    viewHolder.titleTextView.setTextColor(mContext.getResources().getColor(listBean.textColorRes));
                 } else if(listBean.listEnum == ListEnum.content) {
                     viewHolder.contentTextView.setText(listBean.value);
                     viewHolder.contentTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, listBean.contentSize);
+                    viewHolder.contentTextView.setTextColor(mContext.getResources().getColor(listBean.textColorRes));
                 } else if(listBean.listEnum == ListEnum.subtitle) {
                     viewHolder.subTextView.setText(listBean.value);
+                    viewHolder.subTextView.setTextColor(mContext.getResources().getColor(listBean.textColorRes));
                 } else if(listBean.listEnum == ListEnum.timeText) {
                     viewHolder.timeTextView.setText(listBean.value);
                     viewHolder.timeTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, listBean.timeSize);
+                    viewHolder.timeTextView.setTextColor(mContext.getResources().getColor(listBean.textColorRes));
                 }
             }
 

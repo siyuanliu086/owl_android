@@ -7,19 +7,19 @@ import com.owl_android.annotations.OwlList;
 import com.owl_android.utils.R;
 
 public class City {
-	@OwlList(listType = ListEnum.title, textColorRes = R.color.deep_gray)
+	@OwlList(listType = ListEnum.title, textColorRes = R.color.owl_deep_black)
 	@OwlDetail(detailName = "城市", order = 2)
 	private String cityName = "北京市";
 
-	@OwlList(listType = ListEnum.image, imageSize = 48)
+	@OwlList(listType = ListEnum.image, imageSize = 68)
 	@OwlDetail(detailName = "图片", detailView = DetailEnum.image, imageSize = 68, order = 1)
 	private String imageUrl = "http:lalala.png";
 
-	@OwlList(listType = ListEnum.timeText, nameSize = 14, textColorRes = R.color.deep_gray)
+	@OwlList(listType = ListEnum.timeText, nameSize = 14, textColorRes = R.color.owl_deep_gray)
 	@OwlDetail(detailName = "日期", order = 3)
 	private String time = "2017-07-17";
 
-	@OwlList(listType = ListEnum.content, nameSize = 14, textColorRes = R.color.deep_gray)
+	@OwlList(listType = ListEnum.content, nameSize = 14, textColorRes = R.color.owl_deep_gray)
 	@OwlDetail(detailName = "说明", detailView = DetailEnum.textarea, order = 4)
 	private String content = "这是OWL测试案例";
 

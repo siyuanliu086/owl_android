@@ -33,21 +33,22 @@ public class OwlViewFactory {
         if(OWL_DETAILVIEW == viewType) {
             OwlDetailView targetView = new OwlDetailView(mContext);
             return targetView.setAnnotationBean(bean);
-        } else if(OWL_LISTVIEW == viewType) {
-//            OwlListView targetView = new OwlListView(mContext);
-//            List<Object> objectList = bean;
-//            return targetView.setAnnotationBean(bean);
         }
         return  null;
     }
 
     public IOwlLayout getTargetListView(int viewType, List<? extends Object> beanList){
-        if(OWL_DETAILVIEW == viewType) {
-//            OwlDetailView targetView = new OwlDetailView(mContext);
-//            return targetView.setAnnotationBean(bean);
-        } else if(OWL_LISTVIEW == viewType) {
+        if(OWL_LISTVIEW == viewType) {
             OwlListView targetView = new OwlListView(mContext);
-//            List<Object> objectList = beanList;
+            return targetView.setAnnotationBean(beanList);
+        }
+        return  null;
+    }
+
+    public IOwlLayout getTargetListView(int viewType, List<? extends Object> beanList, int dividerHight){
+        if(OWL_LISTVIEW == viewType) {
+            OwlListView targetView = new OwlListView(mContext);
+            targetView.setDividerHeight(dividerHight);
             return targetView.setAnnotationBean(beanList);
         }
         return  null;

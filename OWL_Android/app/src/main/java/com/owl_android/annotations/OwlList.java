@@ -17,5 +17,5 @@ public @interface OwlList {
 	int contentSize() default 14;// default unit sp
 	int timeSize() default 14;// default unit sp
 	int imageSize() default 72;// default unit dp
-	int textColorRes() default R.color.deep_gray;
+	int textColorRes() default R.color.owl_deep_gray;
 }

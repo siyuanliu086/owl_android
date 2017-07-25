@@ -4,10 +4,13 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <!-- 灰色背景 -->
+    <color name="owl_gray_background">#ffffff</color>
+
     <!-- 深灰色 -->
-    <color name="deep_gray">#4b4b4b</color>
+    <color name="owl_deep_gray">#4B4B4B</color>
     <!-- 深黑色 -->
-    <color name="deep_black">#333333</color>
+    <color name="owl_deep_black">#333333</color>
     <!-- 上下描边颜色   通用这个 -->
-    <color name="lines_color">#DDDDDD</color>
+    <color name="owl_lines_color">#DDDDDD</color>
 </resources>

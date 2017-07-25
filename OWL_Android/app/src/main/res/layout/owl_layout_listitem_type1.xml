@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
 
     <ImageView
         android:id="@+id/owl_listitem_icon"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
         android:layout_margin="8dp"
         android:scaleType="fitXY"
         android:layout_centerVertical="true"
